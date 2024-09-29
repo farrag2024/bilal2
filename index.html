@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدخال غياب الطلاب</title>
+    <link rel="icon" href="file:///C:\Users\FNOON\Documents\rased" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            direction: rtl;
+            background-color: rgb(255, 255, 255);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            background-color: hsl(195, 84%, 53%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: auto;
+        }
+        input, select {
+            margin: 10px 0;
+            padding: 10px;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: right;
+            box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+            font-size: 18px;
+            color: darkred;
+        }
+        button {
+            padding: 12px;
+            background-color: hsl(98, 74%, 45%);
+            color: #111010;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #f1a470;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        #exitButton {
+            background-color: red;
+            margin-top: 10px;
+        }
+        #exitButton:hover {
+            background-color: darkred;
+        }
+        #message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            font-size: 16px;
+            display: none;
+            align-items: center;
+        }
+        #loadingMessage {
+            margin-top: 20px;
+            color: blue;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .checkmark {
+            margin-left: 10px;
+            display: none;
+            color: green;
+        }
+        /* لتكبير حجم الـ radio وجعلها متجاورة */
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 20px; /* تكبير الخط */
+    margin-right: 15px;
+}
+
+.radio-group input[type="radio"] {
+    transform: scale(1.5); /* تكبير الـ radio */
+    margin-left: 10px;
+    accent-color: green; /* تغيير لون الـ radio إلى الأخضر عند الاختيار */
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: green; /* تأكيد التغيير للون الأخضر عند التفعيل */
+}
+#attendanceOfficerButton {
+        background-color: yellow; /* اللون الأصفر */
+        margin-top: 20px; /* مسافة 20 بكسل من الأعلى */
+        padding: 12px; /* padding للزر */
+        border: none; /* إزالة الحدود */
+        border-radius: 4px; /* زوايا دائرية */
+        font-size: 18px; /* حجم الخط */
+        font-weight: bold; /* جعل النص بارز */
+        cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+        transition: background-color 0.3s ease; /* تأثير الانتقال */
+    }
+
+    #attendanceOfficerButton:hover {
+        background-color: orange; /* تغيير اللون عند التمرير */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="888.png" alt="Logo" style="max-height: 100px;">
+        <h1 style="font-size: 40px; font-weight: bold;">إدخال الغيـــــاب</h1>
+    </div>
+    
+    <form id="dataForm">
+        <label for="Stu_name">اسم الطالب:</label>
+        <input type="text" id="Stu_name" required>
+
+        <label for="class_num">الصف:</label>
+        <select id="class_num" required>
+            <option value="">اختر الصف</option>
+            <option value="خامس أول">خامس أول</option>
+            <option value="خامس ثاني">خامس ثاني</option>
+            <option value="خامس ثالث">خامس ثالث</option>
+            <option value="خامس رابع">خامس رابع</option>
+            <option value="سادس أول">سادس أول</option>
+            <option value="سادس ثاني">سادس ثاني</option>
+            <option value="سادس ثالث">سادس ثالث</option>
+            <option value="سادس رابع">سادس رابع</option>
+            <option value="سابع أول">سابع أول</option>
+            <option value="سابع ثاني">سابع ثاني</option>
+            <option value="سابع ثالث">سابع ثالث</option>
+            <option value="سابع رابع">سابع رابع</option>
+            <option value="ثامن أول">ثامن أول</option>
+            <option value="ثامن ثاني">ثامن ثاني</option>
+            <option value="ثامن ثالث">ثامن ثالث</option>
+            <option value="ثامن رابع">ثامن رابع</option>
+            <option value="تاسع أول">تاسع أول</option>
+            <option value="تاسع ثاني">تاسع ثاني</option>
+            <option value="تاسع ثالث">تاسع ثالث</option>
+            <option value="تاسع رابع">تاسع رابع</option>
+            <option value="عاشر أول">عاشر أول</option>
+            <option value="عاشر ثاني">عاشر ثاني</option>
+            <option value="عاشر ثالث">عاشر ثالث</option>
+            <option value="عاشر رابع">عاشر رابع</option>
+            <option value="حادي عشر ب 1">حادي عشر ب 1</option>
+            <option value="حادي عشر ب 2">حادي عشر ب 2</option>
+            <option value="حادي عشر ط 1">حادي عشر ط 1</option>
+            <option value="حادي عشر ط 2">حادي عشر ط 2</option>
+            <option value="ثاني عشر ب 1">ثاني عشر ب 1</option>
+            <option value="ثاني عشر ب 2">ثاني عشر ب 2</option>
+            <option value="ثاني عشر ط 1">ثاني عشر ط 1</option>
+            <option value="ثاني عشر ط 2">ثاني عشر ط 2</option>
+        </select>
+
+        <label for="period_num">الحصة:</label>
+        <select id="period_num" required>
+            <option value="">اختر الحصة</option>
+            <option value="الأولى">الأولى</option>
+            <option value="الثانية">الثانية</option>
+            <option value="الثالثة">الثالثة</option>
+            <option value="الرابعة">الرابعة</option>
+            <option value="الخامسة">الخامسة</option>
+            <option value="السادسة">السادسة</option>
+            <option value="السابعة">السابعة</option>
+            <option value="الثامنة">الثامنة</option>
+        </select>
+
+        <label for="date">التاريخ:</label>
+        <input type="date" id="date" required>
+
+        <label for="teacherName">اسم المعلم:</label>
+        <input type="text" id="teacherName" required>
+
+        <label>نوع الغياب:</label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="absent" value="غياب" required> غياب
+            </label>
+            <label>
+                <input type="radio" name="absent" value="هروب" required> هروب
+            </label>
+        </div>
+        
+
+        <button type="submit">حفظ البيانات</button>
+        <button type="button" id="exitButton" onclick="window.close();">خروج</button>
+        <button type="button" id="attendanceOfficerButton">خاص مسئول الغياب</button>
+
+        <div id="loadingMessage" style="display:none;"></div>
+        <div id="message">
+            <span>تم حفظ البيانات بنجاح!</span>
+            <span class="checkmark">✔️</span>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const Stu_name = document.getElementById('Stu_name').value;
+            const classNum = document.getElementById('class_num').value; // أخذ قيمة الصف
+            const period_numValue = document.getElementById('period_num').value;
+            const date = document.getElementById('date').value;
+            const teacherName = document.getElementById('teacherName').value;
+            const absenceType = document.querySelector('input[name="absent"]:checked').value;
+
+            const formData = new URLSearchParams();
+            formData.append('Stu_name', Stu_name);
+            formData.append('class_num', classNum); // إضافة الصف
+            formData.append('period_num', period_numValue);
+            formData.append('date', date);
+            formData.append('teacher_name', teacherName);
+            formData.append('absent', absenceType);
+
+            const loadingMessage = document.getElementById('loadingMessage');
+            loadingMessage.innerText = 'جاري الحفظ، يرجى الانتظار...';
+            loadingMessage.style.display = 'block';
+            window.scrollTo(0, document.body.scrollHeight);
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzth0koMFsGm5ACmpXjLffZaVOqbjHXXPTFwmdONuGtJv9JTcD1f0R7AH17yjF6JgPlIg/exec', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const result = await response.json();
+                loadingMessage.style.display = 'none';
+
+                if (result.success) {
+                    document.getElementById('message').style.display = 'flex';
+                    document.querySelector('.checkmark').style.display = 'inline';
+                    setTimeout(() => {
+                        document.getElementById('message').style.display = 'none';
+                    }, 3000);
+                    document.getElementById('dataForm').reset();
+                } else {
+                    document.getElementById('message').innerText = 'حدث خطأ أثناء الحفظ.';
+                }
+            } catch (error) {
+                loadingMessage.style.display = 'none';
+                document.getElementById('message').innerText = 'حدث خطأ في الاتصال.';
+            }
+                    });
+                    document.getElementById('attendanceOfficerButton').addEventListener('click', function() {
+        const password = prompt("يرجى إدخال كلمة المرور:");
+
+        if (password === "77778888") { // استبدل "كلمتك_هنا" بكلمة المرور المطلوبة
+            window.location.href = "https://farrag2024.github.io/belal/";
+        } else {
+            alert("كلمة المرور غير صحيحة.");
+        }
+    });
+    </script>
+</body>
+</html>
