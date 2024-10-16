@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +13,17 @@
             direction: rtl;
             background-color: rgb(255, 255, 255);
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .header img {
             max-width: 100%;
             height: auto;
         }
+
         form {
             display: flex;
             flex-direction: column;
@@ -30,7 +33,9 @@
             border-radius: 8px;
             margin: auto;
         }
-        input, select {
+
+        input,
+        select {
             margin: 10px 0;
             padding: 10px;
             width: calc(100% - 22px);
@@ -39,11 +44,13 @@
             text-align: right;
             box-sizing: border-box;
         }
+
         label {
             font-weight: bold;
             font-size: 18px;
             color: darkred;
         }
+
         button {
             padding: 12px;
             background-color: hsl(98, 74%, 45%);
@@ -56,19 +63,24 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         button:hover {
             background-color: #f1a470;
         }
+
         button:active {
             transform: scale(0.95);
         }
+
         #exitButton {
             background-color: red;
             margin-top: 10px;
         }
+
         #exitButton:hover {
             background-color: darkred;
         }
+
         #message {
             margin-top: 20px;
             color: green;
@@ -77,65 +89,109 @@
             display: none;
             align-items: center;
         }
+
         #loadingMessage {
             margin-top: 20px;
             color: blue;
             font-weight: bold;
             font-size: 16px;
         }
+
         .checkmark {
             margin-left: 10px;
             display: none;
             color: green;
         }
+
         /* لتكبير حجم الـ radio وجعلها متجاورة */
-.radio-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
 
-.radio-group label {
-    display: flex;
-    align-items: center;
-    font-size: 20px; /* تكبير الخط */
-    margin-right: 15px;
-}
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            /* تكبير الخط */
+            margin-right: 15px;
+        }
 
-.radio-group input[type="radio"] {
-    transform: scale(1.5); /* تكبير الـ radio */
-    margin-left: 10px;
-    accent-color: green; /* تغيير لون الـ radio إلى الأخضر عند الاختيار */
-}
+        .radio-group input[type="radio"] {
+            transform: scale(1.5);
+            /* تكبير الـ radio */
+            margin-left: 10px;
+            accent-color: green;
+            /* تغيير لون الـ radio إلى الأخضر عند الاختيار */
+        }
 
-.radio-group input[type="radio"]:checked {
-    border-color: green; /* تأكيد التغيير للون الأخضر عند التفعيل */
-}
-#attendanceOfficerButton {
-        background-color: yellow; /* اللون الأصفر */
-        margin-top: 20px; /* مسافة 20 بكسل من الأعلى */
-        padding: 12px; /* padding للزر */
-        border: none; /* إزالة الحدود */
-        border-radius: 4px; /* زوايا دائرية */
-        font-size: 18px; /* حجم الخط */
-        font-weight: bold; /* جعل النص بارز */
-        cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
-        transition: background-color 0.3s ease; /* تأثير الانتقال */
-    }
+        .radio-group input[type="radio"]:checked {
+            border-color: green;
+            /* تأكيد التغيير للون الأخضر عند التفعيل */
+        }
 
-    #attendanceOfficerButton:hover {
-        background-color: orange; /* تغيير اللون عند التمرير */
-    }
+        #attendanceOfficerButton {
+            background-color: yellow;
+            /* اللون الأصفر */
+            margin-top: 20px;
+            /* مسافة 20 بكسل من الأعلى */
+            padding: 12px;
+            /* padding للزر */
+            border: none;
+            /* إزالة الحدود */
+            border-radius: 4px;
+            /* زوايا دائرية */
+            font-size: 18px;
+            /* حجم الخط */
+            font-weight: bold;
+            /* جعل النص بارز */
+            cursor: pointer;
+            /* تغيير شكل المؤشر عند التمرير */
+            transition: background-color 0.3s ease;
+            /* تأثير الانتقال */
+        }
 
+        #newLinkButton {
+            background-color: #00ffff;
+            /* اللون الأصفر */
+            margin-top: 20px;
+            /* مسافة 20 بكسل من الأعلى */
+            padding: 12px;
+            /* padding للزر */
+            border: none;
+            /* إزالة الحدود */
+            border-radius: 4px;
+            /* زوايا دائرية */
+            font-size: 18px;
+            /* حجم الخط */
+            font-weight: bold;
+            /* جعل النص بارز */
+            cursor: pointer;
+            /* تغيير شكل المؤشر عند التمرير */
+            transition: background-color 0.3s ease;
+            /* تأثير الانتقال */
+        }
+
+        #attendanceOfficerButton:hover {
+            background-color: orange;
+            /* تغيير اللون عند التمرير */
+        }
+
+        #newLinkButton:hover {
+            background-color: #4400ff;
+            /* تغيير اللون عند التمرير */
+        }
     </style>
 </head>
+
 <body>
     <div class="header">
         <img src="888.png" alt="Logo" style="max-height: 100px;">
         <h1 style="font-size: 40px; font-weight: bold;">إدخال الغيـــــاب</h1>
     </div>
-    
+
     <form id="dataForm">
         <label for="Stu_name">اسم الطالب:</label>
         <input type="text" id="Stu_name" required maxlength="35" placeholder="ادخل اسم طالب واحد فقط ">
@@ -205,11 +261,13 @@
                 <input type="radio" name="absent" value="هروب" required> هروب
             </label>
         </div>
-        
+
 
         <button type="submit">حفظ البيانات</button>
         <button type="button" id="exitButton" onclick="window.close();">خروج</button>
+        <button type="button" id="newLinkButton">تسجيل المجيدون</button>
         <button type="button" id="attendanceOfficerButton">خاص مسئول الغياب</button>
+
 
         <div id="loadingMessage" style="display:none;"></div>
         <div id="message">
@@ -219,7 +277,7 @@
     </form>
 
     <script>
-        document.getElementById('dataForm').addEventListener('submit', async function(event) {
+        document.getElementById('dataForm').addEventListener('submit', async function (event) {
             event.preventDefault();
 
             const Stu_name = document.getElementById('Stu_name').value;
@@ -265,16 +323,21 @@
                 loadingMessage.style.display = 'none';
                 document.getElementById('message').innerText = 'حدث خطأ في الاتصال.';
             }
-                    });
-                    document.getElementById('attendanceOfficerButton').addEventListener('click', function() {
-        const password = prompt("يرجى إدخال كلمة المرور:");
+        });
+        document.getElementById('attendanceOfficerButton').addEventListener('click', function () {
+            const password = prompt("يرجى إدخال كلمة المرور:");
 
-        if (password === "77778888") { // استبدل "كلمتك_هنا" بكلمة المرور المطلوبة
-            window.location.href = "https://farrag2024.github.io/belal/";
-        } else {
-            alert("كلمة المرور غير صحيحة.");
-        }
-    });
+            if (password === "77778888") { // استبدل "كلمتك_هنا" بكلمة المرور المطلوبة
+                window.location.href = "https://farrag2024.github.io/belal/";
+            } else {
+                alert("كلمة المرور غير صحيحة.");
+            }
+        });
+        document.getElementById('newLinkButton').addEventListener('click', function () {
+            window.open('https://farrag2024.github.io/mog/'); // استبدل 'https://example.com' بالرابط الذي تريد فتحه
+        });
+
     </script>
 </body>
+
 </html>
